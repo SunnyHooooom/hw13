@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>打磚塊 BLOCK</title>
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<style>body{ text-align:center} 
+	canvas{border: 2px solid #333}</style>
+
+</head>
+
+<body>
+	<H1>打磚塊</H1>
+	<p>按空白鍵開始/暫停</p>
+	<canvas id="myCanvas" >Your browser does not support canvas</canvas>
+
+	<script src="pingpong.js"></script>
+	<script type="text/javascript">
+		var container=document.getElementById('myCanvas');
+
+		//创建一个新的游戏实例
+		var game=new pingpong(container,function(){
+			setTimeout(function(){
+				window.location.reload(true);//2秒后刷新页面
+			},2000)
+			
+		});//回调函数在游戏结束后运行
+		game.run();//游戏运行
+	</script>
+</body>
+
+</html>
